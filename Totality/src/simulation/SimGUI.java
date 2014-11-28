@@ -31,6 +31,7 @@ import javax.swing.table.TableModel;
 import economy.HH;
 import economy.Pers;
 import economy.Population;
+import extras.Extras;
 import extras.PlotHist;
 
 public class SimGUI extends JFrame {
@@ -60,14 +61,6 @@ public class SimGUI extends JFrame {
 	private static ParamModel paramGlobals;
 
 	public static double sumArr(int[] ar) {
-		double sum = 0;
-		for (int i = 0; i < ar.length; i++) {
-			sum += ar[i];
-		}
-		return sum;
-	}
-
-	public static double sumArr(double[] ar) {
 		double sum = 0;
 		for (int i = 0; i < ar.length; i++) {
 			sum += ar[i];
@@ -146,11 +139,9 @@ public class SimGUI extends JFrame {
 		JLabel lblGov = new JLabel("Gov: ");
 
 		lblGovBal = new JLabel("0");
-
-		popul = new Population();
-		for (int i = 0; i < 1000; i++) {
-			popul.addhh(new HH());
-		}
+		
+		// Create population with 1000 random Households. 
+		popul = new Population(1000);
 
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(gl_panel
@@ -299,6 +290,7 @@ public class SimGUI extends JFrame {
 				}
 			}
 		});
+		
 		btnSimulate.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -311,7 +303,7 @@ public class SimGUI extends JFrame {
 	private static void simulate() {
 		trace1.addPoint(pts, popul.nPeople());
 		double[] ages = popul.getAges();
-		trace2.addPoint(pts, (float) sumArr(ages) / popul.nPeople());
+		trace2.addPoint(pts, (float) Extras.sumArr(ages) / popul.nPeople());
 		trace3.addPoint(pts, (float) popul.nPeople() / popul.size());
 		pts++;
 		lblHhs.setText(Integer.toString(popul.size()));

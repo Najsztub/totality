@@ -7,18 +7,34 @@ import java.util.Random;
 
 public class Population {
 	public List<HH> households;
-	int month = 0;
 
 	// Government
 	static Gov gov;
 
 	// Setup
 	public static Setup params;
-
+	
+	/**
+	 * Create empty population with Government and Setup.
+	 */
 	public Population() {
 		households = new ArrayList<HH>();
 		Population.setParams(new Setup());
 		Population.setGov(new Gov(params));
+	}
+	
+	/**
+	 * Create z population. Constructor creates given number of  Households. 
+	 * Params from Setup() and Government from Gov() are also created. 
+	 * @param nHH Number of Households to generate.
+	 */
+	public Population(int nHH) {
+		households = new ArrayList<HH>();
+		Population.setParams(new Setup());
+		Population.setGov(new Gov(params));
+		for (int i = 0; i < 1000; i++) {
+			addhh(new HH());
+		}
 	}
 
 	/**

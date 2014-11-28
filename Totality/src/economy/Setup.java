@@ -33,7 +33,7 @@ public class Setup {
 		addParam("pensRetAge", "Reirement age", 65);
 		addParam("pensLiveAge", "Exp. life after ret", 10);
 		addParam("charLife", "Expected life", 81);
-		addParam("birthRate", "Birth rate",  5000.0);
+		addParam("birthRate", "Birth rate",  4000.0);
 		addParam("faAmount", "FA Amount", 40);
 
 		trigger();
