@@ -2,6 +2,9 @@ package economy;
 
 import java.util.Random;
 
+import consumption.Basket;
+import consumption.Good;
+
 public class Pers {
 
 	// Age & sex
@@ -15,6 +18,9 @@ public class Pers {
 	// Income & consumption
 	public double income = 0;
 	public double consumption = 0;
+	public double totalUtility = 0;
+	//Consumption
+	private Basket basket;
 	// Pens found
 	private double pensFound = 0;
 
@@ -35,6 +41,11 @@ public class Pers {
 		else
 			pLife = 0.99;
 		charLife = Population.getParams().getParamByName("charLife");
+		basket = new Basket();
+		for (int i = 0; i<8; i++){
+			basket.addGood(new Good());
+		}
+		basket.normalizeBetas();
 		
 
 	}
@@ -49,6 +60,11 @@ public class Pers {
 		sex = rand.nextBoolean();
 		pLife = 1.000;
 		charLife = Population.getParams().getParamByName("charLife");
+		basket = new Basket();
+		for (int i = 0; i<8; i++){
+			basket.addGood(new Good());
+		}
+		basket.normalizeBetas();
 	}
 
 	/**
@@ -114,12 +130,23 @@ public class Pers {
 	}
 
 	private double consume() {
-		return 50;
+		double cons = 50;
+		totalUtility += basket.getUtilityBudget(cons);
+		return cons;
+		
 
 	}
 
 	public boolean hasPartner() {
 		return partner == null ? false : true;
+	}
+	
+	public Basket getBasket() {
+		return basket;
+	}
+
+	public void setBasket(Basket basket) {
+		this.basket = basket;
 	}
 
 }

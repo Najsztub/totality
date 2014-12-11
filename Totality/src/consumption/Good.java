@@ -14,14 +14,14 @@ public class Good {
 	
 	Basket b0;
 	
-	Good(double price, double depreciation, double q0, double beta){
+	public Good(double price, double depreciation, double q0, double beta){
 		this.price = price;
 		this.depreciation = depreciation;
 		this.q0 = q0;
 		this.beta = beta;
 	}
 	
-	Good(){
+	public Good(){
 		Random r = new Random();
 		this.price = r.nextDouble();
 		this.depreciation = r.nextDouble();

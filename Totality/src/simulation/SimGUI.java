@@ -28,7 +28,6 @@ import javax.swing.event.TableModelListener;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableModel;
 
-import economy.HH;
 import economy.Pers;
 import economy.Population;
 import extras.Extras;
@@ -41,7 +40,6 @@ public class SimGUI extends JFrame {
 	private static Chart2D chart2;
 	private static Chart2D chart3;
 	private static PlotHist hist;
-
 	// Create an ITrace:
 	private static ITrace2D trace1;
 	private static ITrace2D trace2;
@@ -86,15 +84,21 @@ public class SimGUI extends JFrame {
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setTitle("Population Simulation");
 		setSize(1100, 600);
-
+		
+		/*
+		 * Create charts and traces
+		 */
 		chart1 = new Chart2D();
 		chart2 = new Chart2D();
 		chart3 = new Chart2D();
 
-		// Create an ITrace:
 		trace1 = new Trace2DLtd(300);
 		trace2 = new Trace2DLtd(300);
 		trace3 = new Trace2DLtd(300);
+		
+		trace1.setName("Number of persons");
+		trace2.setName("Mean age");
+		trace3.setName("Mean household size");
 
 		chart1.addTrace(trace1);
 		chart2.addTrace(trace2);
@@ -106,7 +110,6 @@ public class SimGUI extends JFrame {
 
 		getContentPane().add(chart1);
 		getContentPane().add(chart2);
-
 		getContentPane().add(chart3);
 		getContentPane().add(hist);
 
@@ -283,11 +286,10 @@ public class SimGUI extends JFrame {
 				trace2.removeAllPoints();
 				trace3.removeAllPoints();
 				pts = 0;
-				popul = new Population();
 				Pers.nPers = 0;
-				for (int i = 0; i < 1000; i++) {
-					popul.addhh(new HH());
-				}
+				popul = new Population(1000);
+				
+
 			}
 		});
 		

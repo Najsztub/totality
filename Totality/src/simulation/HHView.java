@@ -58,7 +58,7 @@ public class HHView extends JFrame {
 	public HHView() {
 		setTitle("Househol Explorer");
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 500, 300);
+		setBounds(100, 100, 600, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -258,12 +258,12 @@ public class HHView extends JFrame {
 		}
 
 		private String[] columnNames = new String[] { "id", "Sex", "Age",
-				"Partner", "pLife", "Income", "Cons" };
+				"Partner", "pLife", "Income", "Cons", "Utility" };
 		private Object[][] data = {};
 
 		public void pumpData(HH house) {
 			int nHh = house.members.size();
-			data = new Object[nHh][7];
+			data = new Object[nHh][8];
 			for (int i = 0; i < nHh; i++) {
 				data[i][0] = i;
 				data[i][1] = house.members.get(i).sex ? "M" : "F";
@@ -272,6 +272,7 @@ public class HHView extends JFrame {
 				data[i][4] = house.members.get(i).pLife;
 				data[i][5] = house.members.get(i).income;
 				data[i][6] = house.members.get(i).consumption;
+				data[i][7] = house.members.get(i).totalUtility;
 			}
 			fireTableDataChanged();
 		}

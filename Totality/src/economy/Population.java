@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-
 public class Population {
 	public List<HH> households;
 
@@ -13,7 +12,7 @@ public class Population {
 
 	// Setup
 	public static Setup params;
-	
+
 	/**
 	 * Create empty population with Government and Setup.
 	 */
@@ -165,7 +164,10 @@ public class Population {
 							possibleMatch.get(i).members.get(0).age
 							- possibleMatch.get(j).members.get(0).age
 							);
-					if (notSameSex && (1.5 / (2 + ageDiff) > rand.nextDouble())) {
+					double uRelDiff = (possibleMatch.get(i).members.get(0).totalUtility
+							- possibleMatch.get(j).members.get(0).totalUtility)/
+							possibleMatch.get(i).members.get(0).totalUtility;
+					if (notSameSex && (1.5 / (2 + ageDiff-uRelDiff) > rand.nextDouble())) {
 						// Add person to HH
 						possibleMatch.get(i).addMember(
 								possibleMatch.get(j).members.get(0));
@@ -230,4 +232,5 @@ public class Population {
 	public static void setGov(Gov gov) {
 		Population.gov = gov;
 	}
+
 }

@@ -7,7 +7,7 @@ public class Basket {
 	private Good[] basket;
 	private double minExp;
 	
-	Basket(){
+	public Basket(){
 		basket = new Good[0];
 		minExp = 0;
 	}
@@ -45,6 +45,10 @@ public class Basket {
 			U *= Math.pow(quants[i] - basket[i].q0, basket[i].beta);
 		}
 		return U;
+	}
+	
+	public double getUtilityBudget(double budget){
+		return getUtility(getQuant(budget));
 	}
 	
 	public void normalizeBetas(){
