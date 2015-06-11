@@ -89,8 +89,8 @@ public class Pers {
 	 * Calculate the survival probability at time t. From: Analysis of trends in
 	 * human longevity by Byung Mook Weon exp(-((x+1)/a)^(0.2*x-0.001*x^2+0.8)))
 	 * 
-	 * @param t
-	 * @return
+	 * @param t Time at which the probability is calculated.
+	 * @return Probability of survival.
 	 */
 	private double survivalProb(int t) {
 		return Math.exp(-Math.pow((((double) t + 1) / charLife),
