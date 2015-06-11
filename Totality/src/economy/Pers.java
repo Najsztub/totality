@@ -100,8 +100,8 @@ public class Pers {
 	/**
 	 * Age dependent shape function.
 	 * 
-	 * @param t
-	 * @return
+	 * @param t Age in years
+	 * @return Age shape
 	 */
 	private double ageShape(double t, int g) {
 		if (t > 40)
