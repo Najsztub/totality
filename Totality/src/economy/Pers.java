@@ -19,6 +19,8 @@ public class Pers {
 	public double income = 0;
 	public double consumption = 0;
 	public double totalUtility = 0;
+	private static final double[] initPrice = new double[] 
+			{0.1, 0.5, 0.8, 0.75, 0.15, 0.6, 0.84, 0.11};
 	//Consumption
 	private Basket basket;
 	// Pens found
@@ -44,6 +46,7 @@ public class Pers {
 		basket = new Basket();
 		for (int i = 0; i<8; i++){
 			basket.addGood(new Good());
+			basket.getGood(i).setPrice(initPrice[i]);
 		}
 		basket.normalizeBetas();
 		
@@ -75,7 +78,7 @@ public class Pers {
 		income = getIncome();
 
 		// Add to consumption
-		consumption = consume();
+		consumption = consume(50);
 
 		// Age by 1 and get survival probability
 		pLife = survivalProb(age);
@@ -129,8 +132,8 @@ public class Pers {
 			return 0;
 	}
 
-	private double consume() {
-		double cons = 50;
+	private double consume(double cons) {
+		//double cons = 50;
 		totalUtility += basket.getUtilityBudget(cons);
 		return cons;
 		
