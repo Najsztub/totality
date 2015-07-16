@@ -133,22 +133,20 @@ public class HH {
 	}
 
 	void reproduce() {
+		if (hoh != null && hoh.partner != null) {
+			int inReproductionAge = 0;
+			double crit = Population.getParams().birthRate / Pers.nPers;
+			for (Pers h : new Pers[] { hoh, hoh.partner }) {
+				if (h.sex && h.age >= 17 && h.age < 50)
+					inReproductionAge++;
+				if (!h.sex && h.age >= 20 && h.age < 40)
+					inReproductionAge++;
 
-		if (hoh != null) {
-			if (hoh.partner != null) {
-				int rr = 0;
-				double crit = Population.getParams().birthRate / Pers.nPers;
-				for (Pers h : new Pers[] { hoh, hoh.partner }) {
-					if (h.sex && h.age >= 17 && h.age < 50)
-						rr++;
-					if (!h.sex && h.age >= 20 && h.age < 40)
-						rr++;
-
-				}
-				if (rr == 2 && (Extras.invLogit(new Random().nextDouble() )<= crit)
-						&& dispInc > 500 && members.size() < 10)
-					haveChild();
 			}
+			if (inReproductionAge == 2
+					&& (Extras.invLogit(new Random().nextDouble()) <= crit)
+					&& dispInc > 500 && members.size() < 10)
+				haveChild();
 		}
 
 	}
