@@ -6,7 +6,7 @@ public class Histogram {
 	public static int[] getBins(double[] data, int nBins, double start, double end){
 		
 		int[] bins = new int[nBins];		
-		double delta = (end-start)/((double)nBins);
+		double delta = (end-start)/(nBins);
 		int len = nBins;
 		for( int i = 0; i<data.length; i++){
 			int id =(int)((data[i]-start)/delta);
