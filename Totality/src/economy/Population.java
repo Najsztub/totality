@@ -164,9 +164,9 @@ public class Population {
 							possibleMatch.get(i).members.get(0).age
 							- possibleMatch.get(j).members.get(0).age
 							);
-					double uRelDiff = (possibleMatch.get(i).members.get(0).totalUtility
-							- possibleMatch.get(j).members.get(0).totalUtility)/
-							possibleMatch.get(i).members.get(0).totalUtility;
+					double uRelDiff = (possibleMatch.get(i).members.get(0).maUtility
+							- possibleMatch.get(j).members.get(0).maUtility)/
+							possibleMatch.get(i).members.get(0).maUtility;
 					if (notSameSex && (1.5 / (2 + ageDiff-uRelDiff) > rand.nextDouble())) {
 						// Add person to HH
 						possibleMatch.get(i).addMember(

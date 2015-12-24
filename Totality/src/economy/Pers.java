@@ -19,6 +19,7 @@ public class Pers {
 	public double income = 0;
 	public double consumption = 0;
 	public double totalUtility = 0;
+	public double maUtility = 0;
 	public boolean employed = false;
 	private static final double[] initPrice = new double[] 
 			{0.1, 0.5, 0.8, 0.75, 0.15, 0.6, 0.84, 0.11};
@@ -152,7 +153,9 @@ public class Pers {
 	private double consume(double cons) {
 		//double cons = 50;
 		//this.income -= cons;
-		totalUtility += basket.getUtilityBudget(cons);
+		double utlility = basket.getUtilityBudget(cons);
+		totalUtility += utlility;
+		maUtility = (maUtility * 4 + utlility) / 5.0;
 		return cons;
 		
 

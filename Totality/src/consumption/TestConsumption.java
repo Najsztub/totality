@@ -51,8 +51,14 @@ public class TestConsumption {
 		}
 		
 		// Set first item as sleep
-		timeBasket.getGood(0).setName("Slep");
-		timeBasket.getGood(0).changeGamma(5);
+		timeBasket.getGood(0).setName("Sleep");
+		timeBasket.getGood(0).changeGamma(3);
+		
+		timeBasket.getGood(1).setName("Work");
+		timeBasket.getGood(1).changeGamma(0);
+		
+		timeBasket.getGood(2).setName("Leisure");
+		timeBasket.getGood(2).changeGamma(0);
 		
 		timeBasket.normalizeBetas();
 		
