@@ -31,7 +31,7 @@ public class Population {
 		households = new ArrayList<HH>();
 		Population.setParams(new Setup());
 		Population.setGov(new Gov(params));
-		for (int i = 0; i < 1000; i++) {
+		for (int i = 0; i < nHH; i++) {
 			addhh(new HH());
 		}
 	}

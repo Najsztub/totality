@@ -19,6 +19,7 @@ public class Pers {
 	public double income = 0;
 	public double consumption = 0;
 	public double totalUtility = 0;
+	public boolean employed = false;
 	private static final double[] initPrice = new double[] 
 			{0.1, 0.5, 0.8, 0.75, 0.15, 0.6, 0.84, 0.11};
 	//Consumption
@@ -74,15 +75,30 @@ public class Pers {
 	 * Step person into the future. - age
 	 */
 	public void step() {
+		// Check employment
+		employed = isEmployed();
 		// Produce income
-		income = getIncome();
+		income = getIncome(employed);
 
 		// Add to consumption
+		// TODO Model consumption
+		// TODO Consume income, so that it dissapears.
 		consumption = consume(50);
 
 		// Age by 1 and get survival probability
 		pLife = survivalProb(age);
 		age++;
+	}
+
+	private boolean isEmployed() {
+		if (age >= 17 && age < Population.getParams().pensRetAge) {
+			Random rand = new Random();
+			if (rand.nextFloat() < 0.95) {
+				return true;
+			} else
+				return false;
+		} else
+			return false;
 	}
 
 	/**
@@ -116,12 +132,13 @@ public class Pers {
 
 	/**
 	 * Production function.
+	 * @param isEmployed 
 	 * 
 	 * @return Value produced
 	 */
-	private double getIncome() {
+	private double getIncome(boolean isEmployed) {
 		double gross = 100;
-		if (age >= 17 && age < Population.getParams().pensRetAge) {
+		if (isEmployed && age >= 17 && age < Population.getParams().pensRetAge) {
 			double net = Population.getGov().taxWork(this, gross);
 			pensFound += gross - net;
 			return net;
@@ -134,6 +151,7 @@ public class Pers {
 
 	private double consume(double cons) {
 		//double cons = 50;
+		//this.income -= cons;
 		totalUtility += basket.getUtilityBudget(cons);
 		return cons;
 		

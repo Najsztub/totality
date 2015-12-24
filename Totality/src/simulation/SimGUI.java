@@ -292,7 +292,7 @@ public class SimGUI extends JFrame {
 
 			}
 		});
-		
+		// TODO Button does not run continuously in Java8
 		btnSimulate.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
