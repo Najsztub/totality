@@ -27,6 +27,7 @@ public class Pers {
 	private Basket basket;
 	// Pens found
 	private double pensFound = 0;
+	private Company comp;
 
 	/**
 	 * Create household member
@@ -95,11 +96,12 @@ public class Pers {
 
 	private boolean isEmployed() {
 		if (age >= 17 && age < Population.getParams().pensRetAge) {
-			Random rand = new Random();
-			if (rand.nextFloat() < 0.95) {
+			if (comp != null) {
 				return true;
-			} else
+			} else {
+				// Search for employer
 				return false;
+			}
 		} else
 			return false;
 	}
@@ -175,5 +177,15 @@ public class Pers {
 	public void setBasket(Basket basket) {
 		this.basket = basket;
 	}
+
+	@Override
+	public String toString() {
+		return "Pers [age=" + age + ", sex=" + sex + ", charLife=" + charLife + ", pLife=" + pLife + ", partner="
+				+ partner + ", income=" + income + ", consumption=" + consumption + ", totalUtility=" + totalUtility
+				+ ", maUtility=" + maUtility + ", employed=" + employed + ", basket=" + basket + ", pensFound="
+				+ pensFound + ", comp=" + comp + "]";
+	}
+	
+	
 
 }
