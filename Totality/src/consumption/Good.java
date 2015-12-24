@@ -11,6 +11,7 @@ public class Good {
 	double depreciation;
 	double q0;
 	double beta;
+	String name = "";
 	
 	Basket b0;
 	
@@ -36,5 +37,13 @@ public class Good {
 	public void changeGamma(double q0){
 		this.q0 = q0;
 		b0.updateMinExp();
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 }

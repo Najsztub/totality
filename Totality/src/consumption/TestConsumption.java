@@ -42,6 +42,26 @@ public class TestConsumption {
 			System.out.println("Utility: "+basket.getUtility(quants));
 		}
 		
+		// Time system utility
+		System.out.println("Test Stone Geary Utility function for time");
+		Basket timeBasket = new Basket();
+		for (int i = 0; i<3; i++){
+			timeBasket.addGood(new Good());
+			timeBasket.getGood(i).setPrice(1);
+		}
+		
+		// Set first item as sleep
+		timeBasket.getGood(0).setName("Slep");
+		timeBasket.getGood(0).changeGamma(5);
+		
+		timeBasket.normalizeBetas();
+		
+		timeBasket.printBasket();
+		double[] quants = timeBasket.getQuant(24);		
+		System.out.println("Quants for budget: "+24+": "
+				+printArray(quants));
+		System.out.println("Utility: "+timeBasket.getUtility(quants));
+		
 	}
 
 }
