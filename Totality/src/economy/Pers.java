@@ -22,7 +22,7 @@ public class Pers {
 	public double maUtility = 0;
 	public boolean employed = false;
 	private static final double[] initPrice = new double[] 
-			{0.1, 0.5, 0.8, 0.75, 0.15, 0.6, 0.84, 0.11};
+			{0.1, 0.5};
 	//Consumption
 	private Basket basket;
 	// Pens found
@@ -46,7 +46,7 @@ public class Pers {
 			pLife = 0.99;
 		charLife = Population.getParams().getParamByName("charLife");
 		basket = new Basket();
-		for (int i = 0; i<8; i++){
+		for (int i = 0; i<2; i++){
 			basket.addGood(new Good());
 			basket.getGood(i).setPrice(initPrice[i]);
 		}
@@ -84,7 +84,9 @@ public class Pers {
 		// Add to consumption
 		// TODO Model consumption
 		// TODO Consume income, so that it dissapears.
-		consumption = consume(50);
+		double cons = 20;
+		
+		consumption = consume(cons);
 
 		// Age by 1 and get survival probability
 		pLife = survivalProb(age);
@@ -154,6 +156,7 @@ public class Pers {
 		//double cons = 50;
 		//this.income -= cons;
 		double utlility = basket.getUtilityBudget(cons);
+		income -= cons;
 		totalUtility += utlility;
 		maUtility = (maUtility * 4 + utlility) / 5.0;
 		return cons;
