@@ -4,6 +4,7 @@ import java.util.Random;
 
 import consumption.Basket;
 import consumption.Good;
+import production.Company;
 
 public class Pers {
 
@@ -28,6 +29,7 @@ public class Pers {
 	// Pens found
 	private double pensFound = 0;
 	private Company comp;
+	public double wageIncome = 0;
 
 	/**
 	 * Create household member
@@ -99,8 +101,10 @@ public class Pers {
 			if (comp != null) {
 				return true;
 			} else {
-				// Search for employer
-				return false;
+				Random rand = new Random();
+				int cid = rand.nextInt(Population.firms.size);
+				Population.firms.firms.get(cid).addEmployee(this);
+				return true;
 			}
 		} else
 			return false;
@@ -142,8 +146,9 @@ public class Pers {
 	 * @return Value produced
 	 */
 	private double getIncome(boolean isEmployed) {
-		double gross = 100;
+		
 		if (isEmployed && age >= 17 && age < Population.getParams().pensRetAge) {
+			double gross = wageIncome;
 			double net = Population.getGov().taxWork(this, gross);
 			pensFound += gross - net;
 			return net;

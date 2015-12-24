@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import production.Companies;
+
 public class Population {
 	public List<HH> households;
 
@@ -12,6 +14,9 @@ public class Population {
 
 	// Setup
 	public static Setup params;
+	
+	// Companies
+	public static Companies firms;
 
 	/**
 	 * Create empty population with Government and Setup.
@@ -20,6 +25,7 @@ public class Population {
 		households = new ArrayList<HH>();
 		Population.setParams(new Setup());
 		Population.setGov(new Gov(params));
+		firms = new Companies(10);
 	}
 	
 	/**
@@ -34,6 +40,7 @@ public class Population {
 		for (int i = 0; i < nHH; i++) {
 			addhh(new HH());
 		}
+		firms = new Companies(10);
 	}
 
 	/**
@@ -99,6 +106,8 @@ public class Population {
 	}
 
 	public void step() {
+		// Step companies in time
+		firms.step();
 		// Possible matches
 		List<HH> possibleMatch = new ArrayList<HH>();
 		// Step all HHs in time
