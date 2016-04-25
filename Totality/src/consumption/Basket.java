@@ -49,6 +49,7 @@ public class Basket {
 	
 	public double getUtilityBudget(double budget){
 		return getUtility(getQuant(budget));
+		
 	}
 	
 	public void normalizeBetas(){
@@ -63,13 +64,20 @@ public class Basket {
 	
 	public void printBasket(){
 		int len = basket.length;
+		String goodTitle = "";
 		String title = "\t";
 		String price = "Price:\t";
 		String q0 = "Gamma:\t";
 		String beta = "Beta:\t";
 		Locale l = new Locale("en_US");		
 		for(int i = 0; i<len; i++){
-			title+="Item "+Integer.toString(i+1)+"\t";
+			goodTitle = basket[i].getName();
+			
+			if (goodTitle.equals("")){
+				title+="Item "+Integer.toString(i+1)+"\t";
+			} else {
+				title+= goodTitle + "\t";
+			}
 			price+=String.format(l, "%4.3f" , basket[i].price) + "\t";
 			q0+=String.format(l, "%4.3f" , basket[i].q0) + "\t";
 			beta+=String.format(l, "%4.3f" , basket[i].beta) + "\t";

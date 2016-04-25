@@ -56,7 +56,7 @@ public class HHView extends JFrame {
 	 * Create the frame.
 	 */
 	public HHView() {
-		setTitle("Househol Explorer");
+		setTitle("Household Explorer");
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 600, 300);
 		contentPane = new JPanel();
