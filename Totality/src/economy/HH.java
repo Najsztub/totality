@@ -146,7 +146,7 @@ public class HH {
 		}
 
 	    }
-	    if (inReproductionAge == 2 && (Extras.invLogit(new Random().nextDouble()) <= crit) && dispInc > 500
+	    if (inReproductionAge == 2 && (Extras.invLogit(new Random().nextDouble()) <= crit) && dispInc > 20
 		    && members.size() < 10) {
 		haveChild();
 	    }

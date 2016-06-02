@@ -19,6 +19,7 @@ public class Pers {
     // Income & consumption
     public double income = 0;
     public double consumption = 0;
+    public double savings = 0;
     public double totalUtility = 0;
     public double maUtility = 0;
     public boolean employed = false;
@@ -85,16 +86,15 @@ public class Pers {
 
 	// Add to consumption
 	// TODO Model consumption
-	// TODO Consume income, so that it dissapears.
+	// TODO Model saving, so people do not consume everything
 	double cons = 0;
 	if (income>basket.getMinExp()){
-	    cons = income;
+	    cons = basket.getMinExp() + 0.7 * (income - basket.getMinExp());
 	}
 	else{
 	    cons = basket.getMinExp();
 	}
 	
-
 	consumption = consume(cons);
 
 	// Age by 1 and get survival probability
@@ -171,7 +171,7 @@ public class Pers {
 	// double cons = 50;
 	// this.income -= cons;
 	double utlility = basket.getUtilityBudget(cons);
-	income -= cons;
+	savings = income - cons;
 	totalUtility += utlility;
 	maUtility = (maUtility * 4 + utlility) / 5.0;
 	return cons;
