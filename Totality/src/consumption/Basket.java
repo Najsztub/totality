@@ -115,7 +115,7 @@ public class Basket {
     /**
      * @param minExp the minExp to set
      */
-    public void setMinExp(double minExp) {
+    private void setMinExp(double minExp) {
 	this.minExp = minExp;
     }
 
