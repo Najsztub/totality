@@ -140,6 +140,7 @@ public class Company {
 
 	for (int i = 0; i < 5; i++) {
 	    comp.step();
+	    popul.step();
 	}
 	System.out.println(comp);
 	System.out.println(ee);

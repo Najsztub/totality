@@ -9,7 +9,7 @@ public class Basket {
 
     public Basket() {
 	basket = new Good[0];
-	minExp = 0;
+	setMinExp(0);
     }
 
     public void addGood(Good g) {
@@ -23,7 +23,7 @@ public class Basket {
 
 	g.b0 = this;
 
-	minExp += g.price * g.q0;
+	setMinExp(getMinExp() + g.price * g.q0);
     }
 
     public double[] getQuant(double budget) {
@@ -34,7 +34,7 @@ public class Basket {
 	    gp[i] = basket[i].q0 * basket[i].price;
 	}
 	for (int i = 0; i < gp.length; i++) {
-	    q[i] = basket[i].q0 + basket[i].beta / basket[i].price * (budget - minExp);
+	    q[i] = basket[i].q0 + basket[i].beta / basket[i].price * (budget - getMinExp());
 	}
 	return q;
     }
@@ -87,13 +87,13 @@ public class Basket {
 	System.out.println(price);
 	System.out.println(q0);
 	System.out.println(beta);
-	System.out.println("Min Exp.: " + String.format(l, "%4.3f", minExp));
+	System.out.println("Min Exp.: " + String.format(l, "%4.3f", getMinExp()));
     }
 
     protected void updateMinExp() {
-	minExp = 0;
+	setMinExp(0);
 	for (int i = 0; i < basket.length; i++) {
-	    minExp += basket[i].q0 * basket[i].price;
+	    setMinExp(getMinExp() + basket[i].q0 * basket[i].price);
 	}
     }
 
@@ -103,6 +103,20 @@ public class Basket {
 
     public Good getGood(int id) {
 	return basket[id];
+    }
+
+    /**
+     * @return the minExp
+     */
+    public double getMinExp() {
+	return minExp;
+    }
+
+    /**
+     * @param minExp the minExp to set
+     */
+    public void setMinExp(double minExp) {
+	this.minExp = minExp;
     }
 
 }

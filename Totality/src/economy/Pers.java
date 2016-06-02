@@ -86,7 +86,14 @@ public class Pers {
 	// Add to consumption
 	// TODO Model consumption
 	// TODO Consume income, so that it dissapears.
-	double cons = 20;
+	double cons = 0;
+	if (income>basket.getMinExp()){
+	    cons = income;
+	}
+	else{
+	    cons = basket.getMinExp();
+	}
+	
 
 	consumption = consume(cons);
 
