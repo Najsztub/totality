@@ -1,0 +1,245 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestConsumption<Totality>",
+            "request": "launch",
+            "mainClass": "consumption.TestConsumption",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-AdvancedDynamicChart<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.AdvancedDynamicChart",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-AdvancedStaticChart<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.AdvancedStaticChart",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-AntialiasingChart<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.AntialiasingChart",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-AxisScalePolicyManualTickChart<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.AxisScalePolicyManualTickChart",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CoordinateViewChart<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.CoordinateViewChart",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DynamicChartWithArithmeticMeanTrace<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.DynamicChartWithArithmeticMeanTrace",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Log10AxisChart<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.Log10AxisChart",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Log10AxisChartZoomable<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.Log10AxisChartZoomable",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-LogAxisChart<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.LogAxisChart",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MinimalDynamicChart<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.MinimalDynamicChart",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MinimalStaticChart<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.MinimalStaticChart",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MinimalStaticChartLargeData<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.MinimalStaticChartLargeData",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MinimalStaticChartWithNanValues<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.MinimalStaticChartWithNanValues",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MultiAxesStaticChart<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.MultiAxesStaticChart",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MultiAxisZoomTest<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.MultiAxisZoomTest",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MultiTracing<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.MultiTracing",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MultipleCharts<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.MultipleCharts",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MultitraceStaticChart<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.MultitraceStaticChart",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Showcase<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.Showcase",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-StaticChartDiscs<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.StaticChartDiscs",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-StaticChartErrorBarLineDisc<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.StaticChartErrorBarLineDisc",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-StaticChartFill<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.StaticChartFill",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-StaticChartWithBoxAndTitle<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.StaticChartWithBoxAndTitle",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-StaticChartXAxisInverse<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.StaticChartXAxisInverse",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-StaticCollectorChart<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.StaticCollectorChart",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TraceTester<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.TraceTester",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-VerticalStackedChartsWithParametricSpirals<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.VerticalStackedChartsWithParametricSpirals",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ZoomChartWithErrorBarsAndLogAxis<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.ZoomChartWithErrorBarsAndLogAxis",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ZoomTest<Totality>",
+            "request": "launch",
+            "mainClass": "info.monitorenter.gui.chart.demos.ZoomTest",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Company<Totality>",
+            "request": "launch",
+            "mainClass": "production.Company",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HHView<Totality>",
+            "request": "launch",
+            "mainClass": "simulation.HHView",
+            "projectName": "Totality"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SimGUI<Totality>",
+            "request": "launch",
+            "mainClass": "simulation.SimGUI",
+            "projectName": "Totality"
+        }
+    ]
+}

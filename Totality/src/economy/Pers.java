@@ -85,8 +85,8 @@ public class Pers {
 	income = getIncome(employed);
 
 	// Add to consumption
-	// TODO Model consumption
-	// TODO Model saving, so people do not consume everything
+	// TODO: Model consumption
+	// TODO: Model saving, so people do not consume everything
 	double cons = 0;
 	if (income>basket.getMinExp()){
 	    cons = basket.getMinExp() + 0.7 * (income - basket.getMinExp());
